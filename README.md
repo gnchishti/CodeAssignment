@@ -1,3 +1,6 @@
 # CodeAssignment
-Assignment Demonstrates about MVVM with RXSwift and Moya
+Assignment Demonstrates about 
+- MVVM architecture
+- RXSwift (great way of doing a reactive programming)
+- Moya for network calls
 
