@@ -15,8 +15,7 @@ class SearchViewController: UIViewController {
     var bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnSubmit.setBorder()
-        txtArea.setBorder()
+        self.setUIDesign()
         btnSubmit.rx.tap.subscribe { _ in
             DispatchQueue.main.async {
                 if !SCNetworkManager.shared.isConnectedToNetwork() {
@@ -37,6 +36,11 @@ class SearchViewController: UIViewController {
         } onDisposed: {
             
         }.disposed(by: bag)
+    }
+    
+    func setUIDesign() {
+        btnSubmit.setBorder()
+        txtArea.setBorder()
     }
     
     // MARK: - Navigation

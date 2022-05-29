@@ -25,12 +25,12 @@ class ResultsViewController: UIViewController
     private var currRecords = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setUIDesign()
+        
         showActivity()
         activity.hidesWhenStopped = true
         self.perform(#selector(bindTableData), with: nil, afterDelay: 0.2)
-        buttonPrevious.setBorder()
-        buttonNext.setBorder()
-        btnClose.setBorder()
         btnClose.rx.tap.subscribe { _ in
             self.dismiss(animated: true)
         } onError: { error in
@@ -42,6 +42,12 @@ class ResultsViewController: UIViewController
         }.disposed(by: bag)
     }
     
+    func setUIDesign() {
+        buttonPrevious.setBorder()
+        buttonNext.setBorder()
+        btnClose.setBorder()
+    }
+    
     let bag = DisposeBag()
     
     @objc func bindTableData() {
@@ -49,8 +55,7 @@ class ResultsViewController: UIViewController
            { (row, item, cell) in
                let cellModel = ResultTableViewCellViewModel()
                cellModel.setItem(item: item)
-               cell.viewModel = cellModel
-               cell.bindItems()
+               cell.initCell(model: cellModel)
            }.disposed(by: bag)
         tblResults.rx.setDelegate(self).disposed(by: bag)
         fetchRecords(pagenumber: currPage)
@@ -104,7 +109,6 @@ class ResultsViewController: UIViewController
             } else {
                 callAPI = false
             }
-            
         }
         if callAPI {
             showActivity()

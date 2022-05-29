@@ -30,7 +30,8 @@ class ResultTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func bindItems() {
+    func initCell(model: ResultTableViewCellViewModel) {
+        viewModel = model
         activity.hidesWhenStopped = true
         self.imgAvatar.layer.cornerRadius = self.imgAvatar.frame.size.height/2
         self.viewModel.login.asObservable().bind(to: self.labelLogin.rx.text).disposed(by: bag)
@@ -54,7 +55,6 @@ class ResultTableViewCell: UITableViewCell {
         } onDisposed: {
             
         }.disposed(by: bag)
-        
     }
 }
 

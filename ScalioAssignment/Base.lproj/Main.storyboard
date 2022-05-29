@@ -34,6 +34,15 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcI-xY-lVQ">
+                                <rect key="frame" x="62.5" y="315" width="289" height="86"/>
+                                <string key="text">- MVVM Architecture
+- RxSwift
+- Moya for network requests</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKu-Xy-IPp">
                                 <rect key="frame" x="117" y="72" width="180.5" height="35"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
@@ -46,7 +55,9 @@
                         <constraints>
                             <constraint firstItem="zVo-5U-rAF" firstAttribute="top" secondItem="GSF-RW-53G" secondAttribute="bottom" constant="50" id="4fZ-WY-jSl"/>
                             <constraint firstItem="GSF-RW-53G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Myt-Ul-cq0"/>
+                            <constraint firstItem="AcI-xY-lVQ" firstAttribute="centerX" secondItem="zVo-5U-rAF" secondAttribute="centerX" id="RY8-ek-0Ui"/>
                             <constraint firstItem="GSF-RW-53G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rhq-aA-nG8"/>
+                            <constraint firstItem="AcI-xY-lVQ" firstAttribute="top" secondItem="zVo-5U-rAF" secondAttribute="bottom" constant="50" id="ZF5-Le-cx2"/>
                             <constraint firstItem="HKu-Xy-IPp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="ZaO-Yb-YUv"/>
                             <constraint firstItem="HKu-Xy-IPp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fb1-jW-19V"/>
                             <constraint firstItem="zVo-5U-rAF" firstAttribute="centerX" secondItem="GSF-RW-53G" secondAttribute="centerX" id="yeW-Fe-VhN"/>

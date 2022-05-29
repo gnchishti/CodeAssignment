@@ -26,8 +26,6 @@ class ResultViewModel {
             errorHandler(errorString)
         }
     }
-    
-    
 }
     
 
