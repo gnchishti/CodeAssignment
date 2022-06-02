@@ -7,12 +7,14 @@
 
 import UIKit
 
-struct ScalioResults<T:Codable> : Codable {
-    let results: T
-}
-
 class SCResults: Codable {
-    var total_count:Int = 0
-    var incomplete_results:Bool = false
-    var items:[SCItem] = [SCItem]()
+    let total_count:Int
+    let incomplete_results:Bool
+    let items:[SCItem]
+    
+    init(total_count:Int, incomplete_results:Bool, items:[SCItem]) {
+        self.total_count = total_count
+        self.incomplete_results = incomplete_results
+        self.items = items
+    }
 }

@@ -25,9 +25,7 @@ class ResultsViewController: UIViewController
     private var currRecords = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setUIDesign()
-        
         showActivity()
         activity.hidesWhenStopped = true
         self.perform(#selector(bindTableData), with: nil, afterDelay: 0.2)
@@ -49,13 +47,12 @@ class ResultsViewController: UIViewController
     }
     
     let bag = DisposeBag()
-    
     @objc func bindTableData() {
         self.viewModel.arrItems.asObservable().bind(to: tblResults.rx.items(cellIdentifier: "cell", cellType:ResultTableViewCell.self))
            { (row, item, cell) in
                let cellModel = ResultTableViewCellViewModel()
                cellModel.setItem(item: item)
-               cell.initCell(model: cellModel)
+               cell.viewModel = cellModel
            }.disposed(by: bag)
         tblResults.rx.setDelegate(self).disposed(by: bag)
         fetchRecords(pagenumber: currPage)
